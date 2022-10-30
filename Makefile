@@ -6,7 +6,7 @@
 #    By: aharrass <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 09:36:27 by aharrass          #+#    #+#              #
-#    Updated: 2022/10/29 10:28:29 by aharrass         ###   ########.fr        #
+#    Updated: 2022/10/30 17:41:07 by aharrass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ CC	=	cc
 AR	=	ar -rc
 
 SRCS	=	ft_printf.c	\
+				ft_putstr_len.c	\
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -31,6 +32,7 @@ all:			${NAME}
 ${NAME}:	${OBJS}
 			make -C ${LIBFT}
 						mv ${LIBFT}/libft.a ./${NAME}
+						${AR} ${NAME} ${OBJS}
 			
 clean:
 			make clean -C libft
