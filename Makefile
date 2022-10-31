@@ -6,7 +6,7 @@
 #    By: aharrass <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 09:36:27 by aharrass          #+#    #+#              #
-#    Updated: 2022/10/30 17:41:07 by aharrass         ###   ########.fr        #
+#    Updated: 2022/10/31 14:07:24 by aharrass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,6 @@ CFLAGS	= -Wall -Wextra -Werror
 RM	=	rm -f
 
 LIBFT	=	libft
-
-CC	=	cc
 
 AR	=	ar -rc
 

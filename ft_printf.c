@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:06:58 by aharrass          #+#    #+#             */
-/*   Updated: 2022/10/30 21:49:56 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:10:00 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,9 @@ static int	format_print(const char c, int count, va_list args)
 		count++;
 	}
 	if (c == 's')
-	{
 		count += ft_putstr_len(va_arg(args, char *));
-	}
 	if (c == 'd' || c == 'i')
 		count += ft_putnbr_len(va_arg(args, int));
-		//printf("count:%d\n", count);
 	return(count);
 }
 
