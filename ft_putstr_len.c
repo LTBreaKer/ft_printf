@@ -6,22 +6,23 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 17:37:07 by aharrass          #+#    #+#             */
-/*   Updated: 2022/10/30 21:47:58 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:25:15 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	ft_putstr_len(const char *s)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!s)
 	{
 		ft_putstr_len("(null)");
 		return (6);
 	}
-	while(s[i])
+	while (s[i])
 		ft_putchar_fd(s[i++], 1);
 	return (i);
 }
@@ -51,7 +52,7 @@ int	ft_putnbr_len(int n)
 {
 	if (n == -2147483648)
 	{
-		return(ft_putstr_len("-2147483648"));
+		return (ft_putstr_len("-2147483648"));
 	}
 	else if (n < 0)
 	{
@@ -69,3 +70,44 @@ int	ft_putnbr_len(int n)
 	}
 	return (int_len((long) n));
 }
+
+int	hex_len(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	if (!n)
+		i++;
+	while (n)
+	{
+		i++;
+		n /= 16;
+	}
+	return (i);
+}
+
+int	put_hex(unsigned int n, const char c)
+{
+	char	*l;
+	char	*u;
+
+	l = "0123456789abcdef";
+	u = "0123456789ABCDEF";
+	if (n / 16 != 0)
+	{
+		put_hex(n / 16, c);
+		put_hex(n % 16, c);
+	}
+	else
+	{
+		if (c == 'x')
+			ft_putchar_fd(l[n], 1);
+		else
+			ft_putchar_fd(u[n], 1);
+	}
+	return (hex_len(n));
+}
+// int main()
+// {
+// 	printf("%d\n", put_hex(-50));
+// }

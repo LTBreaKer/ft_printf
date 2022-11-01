@@ -6,7 +6,7 @@
 #    By: aharrass <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 09:36:27 by aharrass          #+#    #+#              #
-#    Updated: 2022/10/31 14:07:24 by aharrass         ###   ########.fr        #
+#    Updated: 2022/11/01 18:18:47 by aharrass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ LIBFT	=	libft
 
 AR	=	ar -rc
 
-SRCS	=	ft_printf.c	\
-				ft_putstr_len.c	\
+SRCS	=	ft_printf.c				\
+				ft_putstr_len.c		\
+				ft_putstr_plus.c	\
 
 OBJS	=	${SRCS:.c=.o}
 

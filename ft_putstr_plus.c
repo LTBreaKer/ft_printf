@@ -1,25 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_plus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:07:02 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/01 18:25:48 by aharrass         ###   ########.fr       */
+/*   Created: 2022/11/01 18:08:27 by aharrass          #+#    #+#             */
+/*   Updated: 2022/11/01 18:26:18 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft/libft.h"
-# include "limits.h"
-# include <stdio.h>
+#include "ft_printf.h"
 
-int	ft_printf(const char *s, ...);
-int	ft_putstr_len(const char *s);
-int	ft_putnbr_len(int n);
-int	put_hex(unsigned int n, const char c);
-int	put_unsigned(int n);
-#endif
+int	unsigned_len(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	if (!n)
+		i++;
+	while (n)
+	{
+		i++;
+		n /= 10;
+	}
+	return (i);
+}
+
+int	put_unsigned(int n)
+{
+	unsigned int	l;
+
+	l = (unsigned int) n;
+	if (l / 10 != 0)
+	{
+		ft_putnbr_len(l / 10);
+		ft_putnbr_len(l % 10);
+	}
+	else
+	{
+		ft_putchar_fd(l + '0', 1);
+	}
+	return (unsigned_len(l));
+}

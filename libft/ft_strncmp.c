@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:37:11 by aharrass          #+#    #+#             */
-/*   Updated: 2022/10/30 21:54:22 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:47:59 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
-}
-
-int main()
-{
-	printf("%d", ft_strncmp(0, 0, 0));
 }
