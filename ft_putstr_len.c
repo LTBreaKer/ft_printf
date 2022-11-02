@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 17:37:07 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/02 17:59:29 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:12:09 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,3 @@ int	put_hex(unsigned long n, const char c)
 	}
 	return (hex_len(n));
 }
-// int main()
-// {
-// 	printf("%d\n", put_hex(-50));
-// }

@@ -6,7 +6,7 @@
 #    By: aharrass <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 09:36:27 by aharrass          #+#    #+#              #
-#    Updated: 2022/11/01 18:18:47 by aharrass         ###   ########.fr        #
+#    Updated: 2022/11/02 18:06:45 by aharrass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ all:			${NAME}
 
 ${NAME}:	${OBJS}
 			make -C ${LIBFT}
-						mv ${LIBFT}/libft.a ./${NAME}
-						${AR} ${NAME} ${OBJS}
+			mv ${LIBFT}/libft.a ./${NAME}
+			${AR} ${NAME} ${OBJS}
 			
 clean:
 			make clean -C libft

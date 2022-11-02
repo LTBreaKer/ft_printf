@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:06:58 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/02 17:58:22 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/02 22:47:08 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_printf(const char *s, ...)
 	va_start(args, s);
 	while (s[i])
 	{
-		if (!format_check(s + i))
+		if (!format_check(s + i) && s[i] != '%')
 		{
 			ft_putchar_fd(s[i], 1);
 			count++;
@@ -74,10 +74,3 @@ int	ft_printf(const char *s, ...)
 	}
 	return (count);
 }
-
-// int main()
-// {
-// 	//char *s = "hello";
-// 	// printf("%d\n", ft_printf("%%"));
-// 	printf("\n%d", ft_printf("%p", LONG_MIN));
-// }
