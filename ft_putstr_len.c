@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 17:37:07 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/01 18:25:15 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:59:29 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_putnbr_len(int n)
 	return (int_len((long) n));
 }
 
-int	hex_len(unsigned int n)
+int	hex_len(unsigned long n)
 {
 	int	i;
 
@@ -86,7 +86,7 @@ int	hex_len(unsigned int n)
 	return (i);
 }
 
-int	put_hex(unsigned int n, const char c)
+int	put_hex(unsigned long n, const char c)
 {
 	char	*l;
 	char	*u;

@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 18:08:27 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/01 18:26:18 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:00:54 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,22 @@ int	unsigned_len(unsigned int n)
 	return (i);
 }
 
-int	put_unsigned(int n)
+int	put_unsigned(unsigned int n)
 {
-	unsigned int	l;
-
-	l = (unsigned int) n;
-	if (l / 10 != 0)
+	if (n / 10 != 0)
 	{
-		ft_putnbr_len(l / 10);
-		ft_putnbr_len(l % 10);
+		ft_putnbr_len(n / 10);
+		ft_putnbr_len(n % 10);
 	}
 	else
 	{
-		ft_putchar_fd(l + '0', 1);
+		ft_putchar_fd(n + '0', 1);
 	}
-	return (unsigned_len(l));
+	return (unsigned_len(n));
+}
+
+int	ft_putchar_len(char c)
+{
+	write(1, &c, 1);
+	return (1);
 }

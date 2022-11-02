@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:06:58 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/01 18:22:01 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:58:22 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,24 @@ static int	format_print(const char c, int count, va_list args)
 
 	i = 0;
 	if (c == 'c')
-	{
-		ft_putchar_fd(va_arg(args, int), 1);
-		count++;
-	}
+		count += ft_putchar_len(va_arg(args, int));
 	else if (c == 's')
 		count += ft_putstr_len(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
 		count += ft_putnbr_len(va_arg(args, int));
 	else if (c == '%')
-	{
-		ft_putchar_fd('%', 1);
-		count++;
-	}
+		count += ft_putchar_len('%');
 	else if (c == 'x')
-		count += put_hex(va_arg(args, int), 'x');
+		count += put_hex((unsigned int)va_arg(args, int), 'x');
 	else if (c == 'X')
-		count += put_hex(va_arg(args, int), 'X');
+		count += put_hex((unsigned int)va_arg(args, int), 'X');
 	else if (c == 'u')
-		count += put_unsigned(va_arg(args, int));
+		count += put_unsigned(va_arg(args, unsigned int));
+	else if (c == 'p')
+	{
+		count += ft_putstr_len("0x");
+		count += put_hex((unsigned long)va_arg(args, void *), 'x');
+	}
 	return (count);
 }
 
@@ -78,6 +77,7 @@ int	ft_printf(const char *s, ...)
 
 // int main()
 // {
+// 	//char *s = "hello";
 // 	// printf("%d\n", ft_printf("%%"));
-// 	printf("\n%d", ft_printf("%u", 0));
+// 	printf("\n%d", ft_printf("%p", LONG_MIN));
 // }
