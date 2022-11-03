@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 17:37:07 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/02 18:12:09 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/03 02:08:47 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,13 @@ int	ft_putstr_len(const char *s)
 
 	i = 0;
 	if (!s)
-	{
-		ft_putstr_len("(null)");
-		return (6);
-	}
+		return (ft_putstr_len("(null)"));
 	while (s[i])
 		ft_putchar_fd(s[i++], 1);
 	return (i);
 }
 
-static int	int_len(long n)
+static int	int_len(int n)
 {
 	int	len;
 	int	buff;
@@ -68,7 +65,7 @@ int	ft_putnbr_len(int n)
 	{
 		ft_putchar_fd(n + '0', 1);
 	}
-	return (int_len((long) n));
+	return (int_len(n));
 }
 
 int	hex_len(unsigned long n)

@@ -6,7 +6,7 @@
 /*   By: aharrass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:06:58 by aharrass          #+#    #+#             */
-/*   Updated: 2022/11/02 22:47:08 by aharrass         ###   ########.fr       */
+/*   Updated: 2022/11/03 02:09:24 by aharrass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_printf(const char *s, ...)
 			ft_putchar_fd(s[i], 1);
 			count++;
 		}
-		else
+		else if (*(s + i + 1) != 0)
 			count = format_print(s[++i], count, args);
 		i++;
 	}
